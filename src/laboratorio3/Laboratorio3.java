@@ -46,7 +46,7 @@ public class Laboratorio3 {
     public static void posesoARealizar(int opcion) {
         switch (opcion) {
             case 1:
-                int ingreso = registarComputadora();
+                int ingreso = registrarComputadora();
                 stock += ingreso;
                 System.out.println("Se registraron " + ingreso + " computadoras.");
                 break;
@@ -73,43 +73,31 @@ public class Laboratorio3 {
         }
     }
 
-    public static int registarComputadora() {
-        System.out.println("************** REGISTRAR **************");
-        int ingresoComputadora;
+    public static int solicitarNumeroEnteroPositivo(String titulo, String mensajePrompt) {
+        System.out.println("************** " + titulo + " **************");
+        int numero;
         while (true) {
-            System.out.print("Ingresa el número de computadoras: ");
+            System.out.print(mensajePrompt);
             if (scanner.hasNextInt()) {
-                ingresoComputadora = scanner.nextInt();
-                if (ingresoComputadora > 0) {
+                numero = scanner.nextInt();
+                if (numero > 0) {
                     break;
                 } else {
                     System.out.println("Debe ser un número mayor que 0.");
                 }
             } else {
                 System.out.println("¡Error! Eso no es un número entero.");
-                scanner.next(); // limpiar entrada incorrecta
+                scanner.next();
             }
         }
-        return ingresoComputadora;
+        return numero;
+    }
+
+    public static int registrarComputadora() {
+        return solicitarNumeroEnteroPositivo("REGISTRAR", "Ingresa el número de computadoras: ");
     }
 
     public static int salidaComputadora() {
-        System.out.println("************** SALIDA **************");
-        int salidaComputadora;
-        while (true) {
-            System.out.print("Ingresa el número de computadoras a retirar: ");
-            if (scanner.hasNextInt()) {
-                salidaComputadora = scanner.nextInt();
-                if (salidaComputadora > 0) {
-                    break;
-                } else {
-                    System.out.println("Debe ser un número mayor que 0.");
-                }
-            } else {
-                System.out.println("¡Error! Eso no es un número entero.");
-                scanner.next(); // limpiar entrada incorrecta
-            }
-        }
-        return salidaComputadora;
+        return solicitarNumeroEnteroPositivo("SALIDA", "Ingresa el número de computadoras a retirar: ");
     }
 }
