@@ -20,7 +20,7 @@ public class Laboratorio3 {
     public static void main(String[] args) {
         int eleccionUsuario;
         do {
-            eleccionUsuario = eleccionPanelPrincipal(); // corregido el nombre
+            eleccionUsuario = opcionPanelPrincipal(); // corregido el nombre
             if (eleccionUsuario >= 1 && eleccionUsuario <= 3) {
                 posesoARealizar(eleccionUsuario);
             } else if (eleccionUsuario != 0) {
@@ -33,7 +33,7 @@ public class Laboratorio3 {
         // TODO code application logic here
     }
 
-    public static int eleccionPanelPrincipal() {
+    public static int opcionPanelPrincipal() {
         System.out.println("\n******** MENÚ PRINCIPAL ********");
         System.out.println("[1] Registrar computadoras");
         System.out.println("[2] Salida de computadoras");
