@@ -13,26 +13,27 @@ import java.util.Scanner;
 public class Laboratorio3 {
     static Scanner scanner = new Scanner(System.in);
     static int stock = 0; // para llevar el control de las existencias
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int opcion;
+        int eleccionUsuario;
         do {
-            opcion = panelPrincipal(); // corregido el nombre
-            if (opcion >= 1 && opcion <= 3) {
-                posesoARealizar(opcion);
-            } else if (opcion != 0) {
+            eleccionUsuario = opcionPanelPrincipal(); // corregido el nombre
+            if (eleccionUsuario >= 1 && eleccionUsuario <= 3) {
+                posesoARealizar(eleccionUsuario);
+            } else if (eleccionUsuario != 0) {
                 System.out.println("Opción no válida.");
             }
-        } while (opcion != 0);
+        } while (eleccionUsuario != 0);
 
         System.out.println("Programa finalizado.");
-        
+
         // TODO code application logic here
     }
-    
-    public static int panelPrincipal() {
+
+    public static int opcionPanelPrincipal() {
         System.out.println("\n******** MENÚ PRINCIPAL ********");
         System.out.println("[1] Registrar computadoras");
         System.out.println("[2] Salida de computadoras");

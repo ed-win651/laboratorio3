@@ -8,8 +8,8 @@ package laboratorio3;
  *
  * @author ed
  */
-class NoHayStockException extends Exception{
-       public NoHayStockException() {
+class NoHayStockException extends Exception {
+    public NoHayStockException() {
         super("¡Error! No hay suficientes computadoras en stock.");
     }
 }
